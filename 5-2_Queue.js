@@ -13,10 +13,10 @@ class Queue {
     }
     enqueue(val){
         var newNode = new Node(val);
-        if(!this.first){
+        if(!this.first){//無節點時
             this.first = newNode;
             this.last = newNode;
-        } else {
+        } else {//已有節點時
             this.last.next = newNode;
             this.last = newNode;
         }
@@ -35,3 +35,11 @@ class Queue {
         return temp.value;
     }
 }
+
+let queueData = new Queue();
+queueData.enqueue(3);
+queueData.enqueue(1);
+queueData.enqueue(8);
+queueData.dequeue();
+
+console.log(queueData);
